@@ -1,0 +1,16 @@
+Library IEEE;
+Use IEEE.std_logic_1164.all;
+
+Entity Ebiti is
+	Port(aVec:in std_logic_vector(3 downto 0);
+		bVec:out std_logic_vector(4 downto 0);
+	end entity;
+Architecture mimari of Ebiti is
+	signal eslik: std_logic;
+
+	Begin
+		
+	eslik <= aVec(0) xor aVec(1) xor aVec(2) xor aVec(3);
+	bVec <= aVec & eslik;
+	
+	end mimari;
